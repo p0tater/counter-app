@@ -59,19 +59,35 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
         color: var(--ddd-theme-default-discoveryCoral);
       }
 
+      .buttons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button{
+        margin: var(--ddd-spacing-2);
+      } 
+
+      .counter{
+        margin: var(--ddd-spacing-4);
+        padding: var(--ddd-spacing-2);
+      }
 
       :host {
-        display: block;
+        display: inline-block;
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
+        width: 10em;
       }
       .wrapper {
-        margin: var(--ddd-spacing-2);
+        margin: var(--ddd-spacing-4);
         padding: var(--ddd-spacing-4);
       }
       .counter {
         font-size: var(--counter-app-label-font-size, var(--ddd-font-size-xxl));
+        text-align: center;
       }
       button:focus{
         color:var(--ddd-theme-default-creekTeal);
