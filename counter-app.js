@@ -96,7 +96,7 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
         outline: 2px solid var(--ddd-theme-default-creekTeal);
       }
     `];
-  }
+  } 
 
   // Lit render the HTML
   render() {
@@ -116,11 +116,20 @@ export class CounterApp extends DDDSuper(I18NMixin(LitElement)) {
   increase() {
     if(this.count < this.max){
     this.count++;
+    var counterNode = document.querySelector('counter-app').cloneNode(true);
+    document.querySelector('#demo').appendChild(counterNode);
+    
     }
   }
   decrease() {
     if(this.count > this.min){
       this.count--;
+      var counterList = document.querySelectorAll('counter-app');
+        if(counterList.length > 1){
+
+          counterList[counterList.length - 1].remove();
+    
+        }
       }
   
   }
